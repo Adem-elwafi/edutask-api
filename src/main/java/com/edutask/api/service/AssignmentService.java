@@ -44,4 +44,11 @@ public class AssignmentService {
                 assignment.isCompleted()
         );
     }
+    // À ajouter dans AssignmentService.java
+    public List<AssignmentResponse> findAll() {
+        return repository.findAll()
+                .stream()
+                .map(this::mapToResponse)
+                .collect(Collectors.toList());
+    }
 }
