@@ -27,4 +27,8 @@ public class AssignmentController {
     public List<AssignmentResponse> getAllAssignments() {
         return service.findAll(); // Attention : il faut ajouter cette méthode dans le Service !
     }
+    @GetMapping("/search")
+    public List<AssignmentResponse> searchAssignments(@RequestParam String course) {
+        return service.searchByCourse(course);
+    }
 }

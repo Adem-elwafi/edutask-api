@@ -51,4 +51,11 @@ public class AssignmentService {
                 .map(this::mapToResponse)
                 .collect(Collectors.toList());
     }
+    // Ajouter cette méthode dans AssignmentService
+    public List<AssignmentResponse> searchByCourse(String courseName) {
+        return repository.findByCourseNameContainingIgnoreCase(courseName)
+                .stream()
+                .map(this::mapToResponse)
+                .collect(Collectors.toList());
+    }
 }
